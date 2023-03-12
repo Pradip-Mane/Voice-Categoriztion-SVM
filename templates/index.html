@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML API</title>
+</head>
+<body>
+    <h1>Classify the Voice (Male or Female)</h1>
+    </br>
+    </br>
+    <p> Insert your CSV file (first row features name, second row values)
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="data_file" class="btn btn-block"/>
+        </br>
+        </br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    <p style="color: rgb(130, 139, 0); font-weight: bold;">{{ prediction }}</p>
+	<img src="{{ image }}" alt="{{ prediction }}">
+</body>
+</html>
